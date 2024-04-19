@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="light">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <!--Para linkar ao CSS-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!--parte direcionada a fonte da página, todo estilo da fonte está linkado ao Google Fonts-->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev.Links</title>
+    <link rel="stylesheet" href="style.css" />
+    <!--esta parte faz com que o HTML seja vinculada ao CSS, aplicando todo estilo representado-->
+  </head>
+  <body>
+    <div id="container">
+      <!--a tag <div> é display block; ou seja, o próximo elemento pula para a linha de baixo-->
+      <div id="profile">
+        <img
+          src="assets/avatar.png"
+          alt="Foto de Mayk Brito sorrindo, usando
+        óculos de grau e camisa preta, barba em um fundo gradiente azul e roxo"
+        />
+        <p>@maykbrito</p>
+      </div>
+
+      <div id="switch" onclick="toggleMode ()">
+        <button>
+        </button>
+        <span></span> <!--Tag Span criada somente para fazer o ícone de switch/troca no CSS-->
+      </div>
+      <ul>
+        <!--a tag <ul> nos permite criar uma lista não ordenada. Caso quiséssemos criar uma lista ordenada (com números) a tag seria <ol>-->
+        <li>
+          <!--<li> respresenta um elemento da lista-->
+          <a href="a" target="_blank">Inscrever-se no NLW</a>
+        </li>
+        <li>
+          <a href="a" target="_blank">Baixar meu e-book</a>
+        </li>
+        <li>
+          <a href="a" target="_blank">Veja meu portfólio</a>
+        </li>
+        <li>
+          <a href="https://app.rocketseat.com.br/home" target="_blank"
+            >Conheça o Explorer</a
+          >
+          <!--adicionar a condição target=_blank vinculada ao link, faz com que ele abra em uma nova aba -->
+        </li>
+      </ul>
+      <div id="social-links">
+        <a href="https://github.com" target="_blank"
+          ><ion-icon name="logo-github"></ion-icon
+        ></a>
+        <a href="https://instagram.com.br" target="_blank"
+          ><ion-icon name="logo-instagram"></ion-icon
+        ></a>
+
+        <a href="https://youtube.com" target="_blank"
+          ><ion-icon name="logo-youtube"></ion-icon
+        ></a>
+
+        <a href="https://youtube.com" target="_blank"
+          ><ion-icon name="logo-linkedin"></ion-icon
+        ></a>
+      </div>
+      <footer>Feito com ♥ pela Geísa</footer>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <!--link utilizado para usar a cartela de icones disponibilizados em https://ionic.io/ionicons-->
+
+    <script src="./script.js"> </script>
+  </body>
+</html>

@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/MoonStars.svg);
+}
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/Sun.svg);
+}
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+*/
+  /*background: color image repeat position/size */
+  background: var(--bg-url) no-repeat top center/cover;
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  font-weight: 500; /* Peso 500 para o corpo da página */
+  height: 100vh;
+}
+
+#container {
+  /*toda id, criada no HTML, é linkada ao CSS usando uma #hashtag*/
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0px; /* margin de 56px aplicada em cima, margin auto aplicada nas laterais e margin 0px aplicada em baixo*/
+  padding: 0 24px;
+}
+/*Profile*/
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+  
+}
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* Switch - Botão */
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  z-index: 1; /* Z-index é usado para definir a posição de um elemento sob a perspectiva vertical.Quanto maior o valor de z-index, mais acima o elemento aparecerá na pilha e mais próximo estará da "superfície" da página. O Z-index só funciona em elementos que possuem a propriedade "absoluta", "relativa" ou "fixa".Elementos com position: static não serão afetados pelo z-index. Além disso, o z-index só tem efeito em elementos que estão empilhados uns sobre os outros. Se os elementos não se sobrepuserem, o z-index não terá nenhum efeito perceptível. */
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: slide-out 0.3s;
+}
+
+#switch button:hover{
+outline: 8px solid var(--highlight-color);
+}
+
+
+.light #switch button {
+  animation: slide-in 0.3s forwards;
+}
+
+#switch span {
+  display: block; /* a tag <span> tem um display inline, e foi utilizado o display block para que o elemento switch ficasse na linha de baixo */
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+}
+
+/* Links da lista*/
+
+ul li a {
+  /*gambiarra pra deixar os links em branco, pois não está respeitando o código de fonte do pai {body} (amém)*/
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  display: flex; /*faz com que os elementos se comportem dentro das dimensões dadas pelo #container. Os itens automaticamente ficaram um ao lado do outro. Para que eles fiquem abaixo, utilizaremos o flex-direction: column;*/
+  justify-content: center; /*alinha o conteúdo no centro da caixa/página/container, de maneira vertical*/
+  height: 52px;
+  align-items: center; /*alinha o conteúdo no centro da caixa, de maneira HORIZONTAL*/
+  padding: 16px 24px;
+  background: var(
+    --surface-color
+  ); /*RGBA= Red, blue, green e alpha. Alpha é a transparência*/
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px; /*Border-radius é arredondamento de borda*/
+  backdrop-filter: blur(
+    4px
+  ); /*aplica um blur suave, porém é necessário usar -webkit-backdrop-filter para que haja maior compatibilidade com os navegadores. Para verificar se podemos usar um determinado efeto/filtro, podemos verificar em caniuse.com*/
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+/*pseudo-selector: altera propriedades/aparência ao passar o mouse em cima*/
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1px solid var(--text-color);
+}
+
+ul {
+  list-style: none;
+  gap: 16px; /*faz um espaçamento de 8px entre as linhas/colunas*/
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+}
+
+#social-links {
+  display: flex;
+  padding: 24px 0;
+  font-size: 24px;
+  text-decoration: none;
+  justify-content: center; /*usamos justify-content para alinhar items em display:flex */
+}
+
+#social-links a {
+  display: flex; /* essa configugação de display flex foi feita para alinhar os ícones dentro da bolinha (hover)*/
+  align-items: center;
+  justify-content: center;
+  color: var(
+    --text-color
+  ); /* gambiaara mais uma vez pra tirar a cor azul dos links hehehe*/
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  font-weight: 400; /* Peso 400 para o footer */
+  padding: 0 24px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Media Queries*/
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+/* animation */
+@keyframes slide-in {
+  from{
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+
+@keyframes slide-out{
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
+  }
+}
