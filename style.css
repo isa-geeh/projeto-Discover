@@ -111,9 +111,8 @@ ul li a {
   height: 52px;
   align-items: center; /*alinha o conteúdo no centro da caixa, de maneira HORIZONTAL*/
   padding: 16px 24px;
-  background: var(
-    --surface-color
-  ); /*RGBA= Red, blue, green e alpha. Alpha é a transparência*/
+  background: var(--surface-color);   
+  /*RGBA= Red, blue, green e alpha. Alpha é a transparência*/
   border: 1px solid var(--stroke-color);
   border-radius: 8px; /*Border-radius é arredondamento de borda*/
   backdrop-filter: blur(
